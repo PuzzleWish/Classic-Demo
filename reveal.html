@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PuzzleWish Reveal</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+PuzzleWish
+</div>
+
+<h1 class="heading">
+🎉 Congratulations!
+</h1>
+
+<p class="description">
+<span class="bold-text">
+You've solved the puzzle!</span>
+
+<br><br>
+<span class="bold-text">
+Now it's time to enjoy the special surprise prepared just for you. 💜</span>
+
+</p>
+
+
+
+<br><br>
+
+<h2>🎙️ Voice Surprise</h2>
+
+<audio id="voicePlayer" controls style="width:100%;">
+    <source src="Audio/voice.mpeg" type="audio/mpeg">
+    Your browser does not support audio.
+</audio>
+<div id="surpriseMessage" style="display:none; margin-top:30px;">
+
+
+
+<p class="description">
+
+<span class="bold-text">Happy Birthday!
+
+Wishing you endless happiness, success and beautiful memories.
+
+Have a wonderful day! 💜</span>
+
+</p>
+
+</div>
+<br><br>
+
+<a href="thankyou.html" class="button">
+Continue
+</a>
+
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const player = document.getElementById("voicePlayer");
+    const message = document.getElementById("surpriseMessage");
+
+    player.onplay = function () {
+    message.style.display = "block";
+};
+});
+
+</script>
+</body>
+
+</html>
