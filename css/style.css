@@ -1,7 +1,30 @@
 /* ===========================
    PuzzleWish Design System
 =========================== */
+:root{
 
+    /* Brand Colors */
+
+    --primary-purple:#6C3BFF;
+    --primary-pink:#FF5FB2;
+
+    /* Background */
+
+    --bg-main:#F8F5FF;
+    --bg-card:#FFFFFF;
+
+    /* Text */
+
+    --heading:#4B2DBF;
+    --text:#333333;
+    --text-light:#666666;
+    --text-muted:#777777;
+
+    /* Effects */
+
+    --shadow:0 12px 30px rgba(108,59,255,.12);
+
+}
 *{
     margin:0;
     padding:0;
@@ -9,9 +32,9 @@
 }
 
 body{
-    background:#f8f5ff;
+    background:var(--bg-main);
     font-family: Segoe UI, Arial, sans-serif;
-    color:#333;
+    color:var(--text);
     margin:0;
     min-height:100vh;
     display:flex;
@@ -25,7 +48,7 @@ body::before{
     position:fixed;
     inset:0;
 
-    background:url("../Assets/Images/background.png") center center/cover no-repeat;
+    background:url("../Assets/Images/background2.png") center center/cover no-repeat;
 
     opacity:0.45;   /* Change this value */
 
@@ -34,41 +57,45 @@ body::before{
 .container{
     max-width: 700px;
     width: 100%;
-    padding: 40px 20px;
+    padding:50px 24px;
     text-align: center;
 }
 
 .logo{
-    font-size:52px;
+     font-size:58px;
     font-weight:800;
-    color:#6C3BFF;
+    color:var(--primary-purple);
     margin-bottom:15px;
     letter-spacing:1px;
 }
 
 .tagline{
     font-size:20px;
-    color:#666;
+    color:#7B7B7B;
     margin-bottom:20px;
 }
 
 .heading{
-    font-size: 50px;
-    color: #4B2DBF;
+     font-size:48px;
+    color:var(--heading);
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .description{
     font-size: 18px;
-    line-height: 1.6;
-    color: #555;
+    line-height:1.75;
+    color:var(--text);
     margin-bottom: 30px;
 }
 
 .button{
     display:inline-block;
-    background:#6C3BFF;
+    background:linear-gradient(
+135deg,
+var(--primary-purple),
+var(--primary-pink)
+);
     color:white;
     padding:16px 40px;
     border-radius:40px;
@@ -76,10 +103,17 @@ body::before{
     font-size:18px;
     font-weight:600;
     transition:all 0.3s ease;
-    box-shadow:0 8px 20px rgba(108,59,255,0.25);
+    box-shadow:
+0 10px 25px rgba(108,59,255,.22);
+border:none;
+letter-spacing:.3px;
 }
 .button:hover{
-    background:#5427d6;
+    background:linear-gradient(
+135deg,
+#5A2BFF,
+#FF4FA5
+);
     transform:translateY(-3px) scale(1.05);
     box-shadow:0 14px 28px rgba(108,59,255,0.35);
 }
@@ -190,22 +224,35 @@ body::before{
 =========================== */
 
 .puzzle-card{
-    background:#ffffff;
-    border-radius:20px;
-    padding:15px;
+    background:var(--bg-card);
+    border-radius:24px;
+    padding:18px;
     margin:30px 0;
-    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+
+    border:1px solid rgba(108,59,255,.08);
+
+    box-shadow:
+    0 16px 35px rgba(108,59,255,.14);
+    transition:.3s ease;
+}
+.puzzle-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 18px 40px rgba(108,59,255,.16);
+
 }
 
 .puzzle-frame{
     width:100%;
     height:600px;
     border:none;
-    border-radius:15px;
+    border-radius:18px;
 }
 .instruction{
     font-size:15px;
-    color:#777;
+    color:var(--text-muted);
     margin-bottom:25px;
     font-style:italic;
 }
@@ -246,7 +293,7 @@ body::before{
 
     font-weight:700;
 
-    color:#6C3BFF;
+    color:var(--primary-purple);
 
     animation:fadeUp .5s ease;
 
@@ -256,6 +303,6 @@ body::before{
 .close-message{
     margin-top:40px;
     font-size:16px;
-    color:#777;
+    color:var(--text-muted);
     font-style:italic;
 }
